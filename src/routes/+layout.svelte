@@ -36,9 +36,13 @@
 	.left {
 		max-width: 1200px;
 		width:30%;
+		overflow-y: scroll;
+		height:99vh;
 	}
 	.right {
 		 width: 70%;
+		 overflow-y: scroll;
+		 height:99vh;
 	}
 	.right-container {
 		display: flex;
