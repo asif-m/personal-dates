@@ -8,14 +8,13 @@
 </script>
 
 <section class="section">
-	<div>Month : {month}</div>
 	{#each children as dailyEvents}
-		<DayItem {dailyEvents} />
+		<DayItem {dailyEvents} {month} />
 	{/each}
 </section>
 
 <style>
 	.section {
-		margin-left: 8px;
+		/* margin-left: 8px; */
 	}
 </style>

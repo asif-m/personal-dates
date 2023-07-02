@@ -54,13 +54,13 @@ for (const year in data) {
 		for (const day in data[year][month]) {
 			const children = data[year][month][day];
 			children.sort((a, b) => a.tick - b.tick);
-			dayWiseArray.push({ day, children: children });
+			dayWiseArray.push({ day: parseInt(day, 10), children: children });
 		}
 		dayWiseArray.sort((a, b) => a.day - b.day);
-		monthWiseArray.push({ month, children: dayWiseArray });
+		monthWiseArray.push({ month:parseInt(month, 10), children: dayWiseArray });
 	}
 	monthWiseArray.sort((a, b) => a.month - b.month);
-	yearWiseArray.push({ year, children: monthWiseArray });
+	yearWiseArray.push({ year:parseInt(year, 10), children: monthWiseArray });
 }
 yearWiseArray.sort((a, b) => a.year - b.year);
 console.timeEnd();

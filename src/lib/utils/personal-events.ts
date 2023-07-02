@@ -13,6 +13,11 @@ export const PERSONAL_EVENTS = [
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
+		names: ['Random'],
+		date: new Date(1983, MONTH.JAN, 1, 12, 25),
+		type: EVENTTYPE.BIRTHDAY
+	},
+	{
 		names: ['Random Jan'],
 		date: new Date(1983, MONTH.JAN, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY

@@ -36,32 +36,33 @@ export class DateUtils {
 			day: calculatedDate.getDate()
 		};
 	}
-	public getMonthString(month: MONTH): string {
+	public static getMonthString(month: number): string {
+		console.log({month, m:MONTH.JAN})
 		switch (month) {
 			case MONTH.JAN:
-				return 'Jan';
+				return 'JAN';
 			case MONTH.FEB:
-				return 'Feb';
+				return 'FEB';
 			case MONTH.MAR:
-				return 'Mar';
+				return 'MAR';
 			case MONTH.APR:
-				return 'Apr';
+				return 'APR';
 			case MONTH.MAY:
-				return 'May';
+				return 'MAY';
 			case MONTH.JUN:
-				return 'Jun';
+				return 'JUN';
 			case MONTH.JUL:
-				return 'Jul';
+				return 'JUL';
 			case MONTH.AUG:
-				return 'Aug';
+				return 'AUG';
 			case MONTH.SEP:
-				return 'Sep';
+				return 'SEP';
 			case MONTH.OCT:
-				return 'Oct';
+				return 'OCT';
 			case MONTH.NOV:
-				return 'Nov';
+				return 'NOV';
 			case MONTH.DEC:
-				return 'Dec';
+				return 'DEC';
 			default:
 				return '';
 		}

@@ -18,7 +18,6 @@
 	.section {
 		margin: 8px;
 		border: 3px solid red;
-		position: sticky;
 	}
 	.title {
 		background: red;
