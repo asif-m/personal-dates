@@ -1,8 +1,13 @@
 <script>
 	import './styles.css';
+	import { YEAR_MONTH_DAY_EVENTS } from '../lib/utils/store';
+	import YearItem from './year-item.svelte';
 </script>
 
 <div class="app">
+	{#each YEAR_MONTH_DAY_EVENTS as yearEvents}
+		<YearItem {yearEvents} />
+	{/each}
 </div>
 
 <style>
