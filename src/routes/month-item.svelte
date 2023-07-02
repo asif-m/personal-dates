@@ -8,7 +8,7 @@
 	const children = monthlyEvents.children;
 </script>
 
-<div class="section" data-scroll={`${year}_${month}`}>
+<div class="section">
 	{#each children as dailyEvents}
 		<DayItem {dailyEvents} {month} {year}/>
 	{/each}

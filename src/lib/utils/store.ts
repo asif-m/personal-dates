@@ -25,6 +25,16 @@ export type TYearlyEvents = {
 
 const data: { [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } } = {};
 console.time();
+const now = new Date(Date.now());
+const nowTick = now.getTime();
+let closest = {
+	initialized: false,
+	minTickDiff: 0,
+	year: 0,
+	month: 0,
+	day: 0
+};
+
 PERSONAL_EVENTS.forEach((event) => {
 	REMINDERS.forEach((reminder) => {
 		const { date, year, month, day, tick } = DateUtils.calculateReminder(event, reminder);
@@ -37,6 +47,17 @@ PERSONAL_EVENTS.forEach((event) => {
 		if (!data[year][month][day]) {
 			data[year][month][day] = [];
 		}
+		const nowTickDiff = Math.abs(nowTick - tick);
+		if (!closest.initialized || nowTickDiff < closest.minTickDiff) {
+			closest = {
+				minTickDiff: nowTickDiff,
+				year,
+				month,
+				day,
+				initialized: true
+			};
+		}
+
 		data[year][month][day].push({
 			tick,
 			date,
@@ -46,6 +67,7 @@ PERSONAL_EVENTS.forEach((event) => {
 	});
 });
 const yearWiseArray: Array<TYearlyEvents> = [];
+
 for (const year in data) {
 	const monthWiseArray = [];
 
@@ -57,12 +79,13 @@ for (const year in data) {
 			dayWiseArray.push({ day: parseInt(day, 10), children: children });
 		}
 		dayWiseArray.sort((a, b) => a.day - b.day);
-		monthWiseArray.push({ month:parseInt(month, 10), children: dayWiseArray });
+		monthWiseArray.push({ month: parseInt(month, 10), children: dayWiseArray });
 	}
 	monthWiseArray.sort((a, b) => a.month - b.month);
-	yearWiseArray.push({ year:parseInt(year, 10), children: monthWiseArray });
+	yearWiseArray.push({ year: parseInt(year, 10), children: monthWiseArray });
 }
 yearWiseArray.sort((a, b) => a.year - b.year);
 console.timeEnd();
 
 export const YEAR_MONTH_DAY_EVENTS = yearWiseArray;
+export const CLOSEST_DATE_TO_TODAY = closest;

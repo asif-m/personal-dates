@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { TYearlyEvents } from '$lib/utils/store';
 	import MonthItem from './month-item.svelte';
+	
 
 	export let yearEvents: TYearlyEvents;
 	const year = yearEvents.year;
@@ -8,7 +9,7 @@
 </script>
 
 <section class="section">
-	<h1 class="title" data-scroll={`${year}`}>{year}</h1>
+	<h1 class="title">{year}</h1>
 	{#each children as monthlyEvent}
 		<MonthItem monthlyEvents={monthlyEvent} year={year}/>
 	{/each}
