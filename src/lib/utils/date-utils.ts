@@ -66,4 +66,26 @@ export class DateUtils {
 				return '';
 		}
 	}
+	public static getDifferenceBetweenTwoDates(dateTo: Date, dateFrom: Date) {
+		const n = dateTo.getTime() - dateFrom.getTime();
+		const msInSeconds = 1000;
+		const msInMinute = 60000; // 1000 * 60;
+		const msInHour = 3600000; // 1000 * 60 * 60;
+		const msInDay = 86400000; // 1000 * 60 * 60 * 24;
+		const msInWeek = 604800000; // 1000 * 60 * 60 * 24 * 7;
+		const msInMonth = 2629746000; // 1000 * 60 * 60 * 24 * 146097.0 / 4800;
+		const msInYear = 31556952000; // 1000 * 60 * 60 * 24 * 146097.0 / 400;
+		const mSeconds = n < 0 ? Math.floor(n) : Math.ceil(n);
+
+		const d ={
+			seconds: Math.floor(mSeconds / msInSeconds),
+			minutes: Math.floor(mSeconds / msInMinute),
+			hours: Math.floor(mSeconds / msInHour),
+			days: Math.floor(mSeconds / msInDay),
+			weeks: Math.floor(mSeconds / msInWeek),
+			months: Math.floor(mSeconds / msInMonth),
+			years: Math.floor(mSeconds / msInYear)
+		}
+		return d;
+	}
 }

@@ -4,7 +4,7 @@
 	import Pill from './pill.svelte';
 	export let eventDetail: TEventDetail;
 	const reminderText = getFormattedReminderText(eventDetail.reminder);
-	const persons = ` ${eventDetail.event.names[0]} 💍❤️ ${eventDetail.event.names[1]}`;
+	const persons = `${eventDetail.event.names[0]} 💍❤️ ${eventDetail.event.names[1]}`;
 </script>
 
 <div>

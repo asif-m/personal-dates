@@ -2,12 +2,25 @@
 	import './styles.css';
 	import { YEAR_MONTH_DAY_EVENTS } from '../lib/utils/store';
 	import YearItem from './year-item.svelte';
+	import { PERSONAL_EVENTS } from '$lib/utils/personal-events';
+	import PersonalItem from './personal-item.svelte';
 </script>
 
 <div class="app">
-	{#each YEAR_MONTH_DAY_EVENTS as yearEvents}
-		<YearItem {yearEvents} />
-	{/each}
+	<div class="container">
+		<div class="left">
+			{#each YEAR_MONTH_DAY_EVENTS as yearEvents}
+				<YearItem {yearEvents} />
+			{/each}
+		</div>
+		<div class="right">
+			<div class="right-container">
+				{#each PERSONAL_EVENTS as personalEvent}
+					<PersonalItem {personalEvent} />
+				{/each}
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
@@ -16,33 +29,20 @@
 		flex-direction: column;
 		min-height: 100vh;
 	}
-
-	main {
-		flex: 1;
+	.container {
 		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
+		flex-direction: row;
 	}
-
-	footer {
+	.left {
+		max-width: 1200px;
+		width:30%;
+	}
+	.right {
+		 width: 70%;
+	}
+	.right-container {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+		flex-wrap: wrap;
+		flex-direction: row;
 	}
 </style>

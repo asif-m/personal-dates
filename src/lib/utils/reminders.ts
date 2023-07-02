@@ -32,7 +32,6 @@ export function getFormattedReminderText(reminder: TReminder): string {
 	if(reminder.seconds){
 		finalString.push(`${reminder.seconds} ${reminder.seconds===1 ? "Second": "Seconds"}`)
 	}
-	console.log({a:finalString.join(", ")})
 	return finalString.join(", ")
 }
 
