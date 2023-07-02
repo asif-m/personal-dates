@@ -10,12 +10,12 @@
 <div>
 	{#if reminderText}
     <div>
-        <Pill text={`🎂 ${person}`}, color={"black"} backgroundColor={"white"}></Pill>
-        <Pill text={reminderText}, color={"black"} backgroundColor={"white"}></Pill>
+        <Pill text={`🎂 ${person}`} color={"black"} backgroundColor={"white"}></Pill>
+        <Pill text={reminderText} color={"black"} backgroundColor={"white"}></Pill>
     </div>
 	{:else}
     <div>
-        <Pill text={`🎂 ${person}`}, color={"black"} backgroundColor={"white"}></Pill>
+        <Pill text={`🎂 ${person}`} color={"black"} backgroundColor={"white"}></Pill>
     </div>
 	{/if}
 </div>
