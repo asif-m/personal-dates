@@ -10,14 +10,14 @@
 
 <style>
 	.container {
-		background-color:#4cadad;
+		background-color: #4cadad;
 		border: none;
 		color: white;
 		padding: 4px 4px;
 		text-align: center;
 		text-decoration: none;
 		margin: 4px 4px;
-        cursor: default;
+		cursor: default;
 		border-radius: 8px;
 	}
 </style>

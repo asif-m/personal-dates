@@ -10,7 +10,7 @@
 	export let year: number;
 	const day = dailyEvents.day;
 	const children = dailyEvents.children;
-	const isToday = day=== NOW.getDate() && month === NOW.getMonth() && year === NOW.getFullYear()
+	const isToday = day === NOW.getDate() && month === NOW.getMonth() && year === NOW.getFullYear();
 </script>
 
 <div class="timeline" data-scroll={`${year}_${month}_${day}`}>
@@ -18,9 +18,9 @@
 	<div class="contents">
 		<div class="date">
 			{#if isToday}
-			<div class="today">⏰ {day} {DateUtils.getMonthString(month)}</div>
+				<div class="today">⏰ {day} {DateUtils.getMonthString(month)}</div>
 			{:else}
-			<div>{day} {DateUtils.getMonthString(month)}</div>
+				<div>{day} {DateUtils.getMonthString(month)}</div>
 			{/if}
 		</div>
 		{#each children as eventDetail}
@@ -33,9 +33,9 @@
 							{:else if eventDetail.event.type === EVENTTYPE.WEDDING}
 								<Wedding {eventDetail} />
 							{:else if eventDetail.event.type === EVENTTYPE.TODAY}
-							<div>
-								<Pill text="📅 Today" color="red" backgroundColor="black"></Pill>
-							</div>
+								<div>
+									<Pill text="📅 Today" color="red" backgroundColor="black" />
+								</div>
 							{/if}
 						</div>
 					</div>
@@ -81,10 +81,10 @@
 	.item {
 		padding: 0px 0px 12px 40px;
 	}
-	.today{
+	.today {
 		/* font-size: 1.25rem;
 		font-weight: 800;
 		font-weight: bold; */
-		color:black;
+		color: black;
 	}
 </style>

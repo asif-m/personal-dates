@@ -9,30 +9,29 @@ export type TReminder = {
 };
 
 export function getFormattedReminderText(reminder: TReminder): string {
-	
 	const finalString = [];
-	if(reminder.years){
-		finalString.push(`${reminder.years} ${reminder.years===1 ? "Year": "Years"}`)
+	if (reminder.years) {
+		finalString.push(`${reminder.years} ${reminder.years === 1 ? 'Year' : 'Years'}`);
 	}
-	if(reminder.months){
-		finalString.push(`${reminder.months} ${reminder.months===1 ? "Month": "Months"}`)
+	if (reminder.months) {
+		finalString.push(`${reminder.months} ${reminder.months === 1 ? 'Month' : 'Months'}`);
 	}
-	if(reminder.weeks){
-		finalString.push(`${reminder.weeks} ${reminder.weeks===1 ? "Week": "Weeks"}`)
+	if (reminder.weeks) {
+		finalString.push(`${reminder.weeks} ${reminder.weeks === 1 ? 'Week' : 'Weeks'}`);
 	}
-	if(reminder.days){
-		finalString.push(`${reminder.days} ${reminder.days===1 ? "Day": "Days"}`)
+	if (reminder.days) {
+		finalString.push(`${reminder.days} ${reminder.days === 1 ? 'Day' : 'Days'}`);
 	}
-	if(reminder.hours){
-		finalString.push(`${reminder.hours} ${reminder.hours===1 ? "Hour": "Hours"}`)
+	if (reminder.hours) {
+		finalString.push(`${reminder.hours} ${reminder.hours === 1 ? 'Hour' : 'Hours'}`);
 	}
-	if(reminder.minutes){
-		finalString.push(`${reminder.minutes} ${reminder.minutes===1 ? "Minute": "Minutes"}`)
+	if (reminder.minutes) {
+		finalString.push(`${reminder.minutes} ${reminder.minutes === 1 ? 'Minute' : 'Minutes'}`);
 	}
-	if(reminder.seconds){
-		finalString.push(`${reminder.seconds} ${reminder.seconds===1 ? "Second": "Seconds"}`)
+	if (reminder.seconds) {
+		finalString.push(`${reminder.seconds} ${reminder.seconds === 1 ? 'Second' : 'Seconds'}`);
 	}
-	return finalString.join(", ")
+	return finalString.join(', ');
 }
 
 export const REMINDERS: Array<TReminder> = [
@@ -629,7 +628,7 @@ export const REMINDERS: Array<TReminder> = [
 	{ years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 1111111111 },
 	{ years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 2222222222 },
 	{ years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 3333333333 },
-	
+
 	{ years: 2, months: 2, weeks: 0, days: 2, hours: 0, minutes: 0, seconds: 0 },
 	{ years: 3, months: 3, weeks: 0, days: 3, hours: 0, minutes: 0, seconds: 0 },
 	{ years: 4, months: 4, weeks: 0, days: 4, hours: 0, minutes: 0, seconds: 0 },
@@ -638,6 +637,5 @@ export const REMINDERS: Array<TReminder> = [
 	{ years: 7, months: 7, weeks: 0, days: 7, hours: 0, minutes: 0, seconds: 0 },
 	{ years: 8, months: 8, weeks: 0, days: 8, hours: 0, minutes: 0, seconds: 0 },
 	{ years: 9, months: 9, weeks: 0, days: 9, hours: 0, minutes: 0, seconds: 0 },
-	{ years: 11, months: 11, weeks: 0, days: 11, hours: 0, minutes: 0, seconds: 0 },
-
+	{ years: 11, months: 11, weeks: 0, days: 11, hours: 0, minutes: 0, seconds: 0 }
 ];

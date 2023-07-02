@@ -149,12 +149,12 @@ export const PERSONAL_EVENTS = [
 	},
 	{
 		names: ['Shahzeena'],
-		date: new Date(1998, MONTH.NOV,13),
+		date: new Date(1998, MONTH.NOV, 13),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
 		names: ['Shafeera'],
-		date: new Date(2000, MONTH.JUL,10),
+		date: new Date(2000, MONTH.JUL, 10),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
@@ -204,12 +204,12 @@ export const PERSONAL_EVENTS = [
 	},
 	{
 		names: ['Raheesh'],
-		date: new Date(2014, MONTH.MAR,15),
+		date: new Date(2014, MONTH.MAR, 15),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
 		names: ['Hamdan'],
 		date: new Date(2021, MONTH.NOV, 4),
 		type: EVENTTYPE.BIRTHDAY
-	},
-].sort((a,b)=> a.date.getTime()-b.date.getTime());
+	}
+].sort((a, b) => a.date.getTime() - b.date.getTime());

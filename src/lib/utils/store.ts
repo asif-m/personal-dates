@@ -24,14 +24,14 @@ export type TYearlyEvents = {
 	children: Array<TMonthlyEvents>;
 };
 
-type TData={ [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } }
-const data:TData  = {};
+type TData = { [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } };
+const data: TData = {};
 console.time();
 
 export const NOW = new Date(Date.now());
 export const NOWTICK = NOW.getTime();
 
-function initForDate(data:TData, year:number, month:number, day:number){
+function initForDate(data: TData, year: number, month: number, day: number) {
 	if (!data[year]) {
 		data[year] = {};
 	}
@@ -42,19 +42,18 @@ function initForDate(data:TData, year:number, month:number, day:number){
 		data[year][month][day] = [];
 	}
 }
-initForDate(data, NOW.getFullYear(),NOW.getMonth(),NOW.getDate());
+initForDate(data, NOW.getFullYear(), NOW.getMonth(), NOW.getDate());
 data[NOW.getFullYear()][NOW.getMonth()][NOW.getDate()].push({
-	tick:NOWTICK,
-	date : NOW,
-	event: {names:[], date:NOW, type:EVENTTYPE.TODAY},
-	reminder: {years:0, months:0, days:0, weeks:0, hours:0, minutes:0, seconds:0}
+	tick: NOWTICK,
+	date: NOW,
+	event: { names: [], date: NOW, type: EVENTTYPE.TODAY },
+	reminder: { years: 0, months: 0, days: 0, weeks: 0, hours: 0, minutes: 0, seconds: 0 }
 });
-
 
 PERSONAL_EVENTS.forEach((event) => {
 	REMINDERS.forEach((reminder) => {
 		const { date, year, month, day, tick } = DateUtils.calculateReminder(event, reminder);
-		initForDate(data, year,month,day);
+		initForDate(data, year, month, day);
 		data[year][month][day].push({
 			tick,
 			date,
@@ -63,7 +62,6 @@ PERSONAL_EVENTS.forEach((event) => {
 		});
 	});
 });
-
 
 const yearWiseArray: Array<TYearlyEvents> = [];
 
