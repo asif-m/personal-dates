@@ -27,8 +27,10 @@ export type TYearlyEvents = {
 type TData={ [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } }
 const data:TData  = {};
 console.time();
-const now = new Date(Date.now());
-const nowTick = now.getTime();
+
+export const NOW = new Date(Date.now());
+export const NOWTICK = NOW.getTime();
+
 function initForDate(data:TData, year:number, month:number, day:number){
 	if (!data[year]) {
 		data[year] = {};
@@ -40,11 +42,11 @@ function initForDate(data:TData, year:number, month:number, day:number){
 		data[year][month][day] = [];
 	}
 }
-initForDate(data, now.getFullYear(),now.getMonth(),now.getDate());
-data[now.getFullYear()][now.getMonth()][now.getDate()].push({
-	tick:nowTick,
-	date : now,
-	event: {names:[], date:now, type:EVENTTYPE.TODAY},
+initForDate(data, NOW.getFullYear(),NOW.getMonth(),NOW.getDate());
+data[NOW.getFullYear()][NOW.getMonth()][NOW.getDate()].push({
+	tick:NOWTICK,
+	date : NOW,
+	event: {names:[], date:NOW, type:EVENTTYPE.TODAY},
 	reminder: {years:0, months:0, days:0, weeks:0, hours:0, minutes:0, seconds:0}
 });
 

@@ -1,15 +1,14 @@
 <script>
 	import './styles.css';
-	import { YEAR_MONTH_DAY_EVENTS } from '../lib/utils/store';
+	import { NOW, YEAR_MONTH_DAY_EVENTS } from '../lib/utils/store';
 	import YearItem from './year-item.svelte';
 	import { PERSONAL_EVENTS } from '$lib/utils/personal-events';
 	import PersonalItem from './personal-item.svelte';
 	import { afterUpdate } from 'svelte';
 
 	afterUpdate(() => {
-		const now = new Date(Date.now())
 		const nodes = document.querySelectorAll(
-			`[data-scroll="${now.getFullYear()}_${now.getMonth()}_${now.getDate()}"]`
+			`[data-scroll="${NOW.getFullYear()}_${NOW.getMonth()}_${NOW.getDate()}"]`
 		);
 		nodes.forEach((node) =>
 			node.scrollIntoView({

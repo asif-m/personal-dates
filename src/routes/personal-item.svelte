@@ -3,13 +3,14 @@
 	import { EVENTTYPE } from '$lib/utils/constants';
 	import type { TPersonalEvent } from '$lib/utils/personal-events';
 	import { DateUtils } from '$lib/utils/date-utils';
+	import { NOW } from '$lib/utils/store';
 	export let personalEvent: TPersonalEvent;
 
 	let date = personalEvent.date;
-	let elapsedData = writable(DateUtils.getDifferenceBetweenTwoDates(new Date(Date.now()), date));
+	let elapsedData = writable(DateUtils.getDifferenceBetweenTwoDates(NOW, date));
 
 	setInterval(() => {
-		elapsedData.update(() => DateUtils.getDifferenceBetweenTwoDates(new Date(Date.now()), date));
+		elapsedData.update(() => DateUtils.getDifferenceBetweenTwoDates(NOW, date));
 	}, 1000);
 	const formattedDate = new Intl.DateTimeFormat('en-GB', {
 		weekday: 'short',
