@@ -4,9 +4,9 @@
 	export let backgroundColor: string;
 </script>
 
-<div class={'container'} style={`{color:${color}, background-color:${backgroundColor}`}>
+<span class={'container'} style={`{color:${color}, background-color:${backgroundColor}`}>
 	{text}
-</div>
+</span>
 
 <style>
 	.container {
@@ -16,9 +16,8 @@
 		padding: 4px 4px;
 		text-align: center;
 		text-decoration: none;
-		display: inline-block;
 		margin: 4px 4px;
-		cursor: pointer;
+        cursor: default;
 		border-radius: 8px;
 	}
 </style>
