@@ -3,7 +3,6 @@
 </script>
 
 <div class="app">
-	Asif
 </div>
 
 <style>
