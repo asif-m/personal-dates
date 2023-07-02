@@ -8,7 +8,7 @@
 </script>
 
 <section class="section">
-	<div class="title">{year}</div>
+	<h1 class="title">{year}</h1>
 	{#each children as monthlyEvent}
 		<MonthItem monthlyEvents={monthlyEvent} />
 	{/each}
@@ -17,9 +17,19 @@
 <style>
 	.section {
 		margin: 8px;
-		border: 3px solid red;
 	}
 	.title {
-		background: red;
+		--dateH: 3rem;
+		height: var(--dateH);
+		margin-inline: calc(var(--inlineP) * -1);
+		text-align: center;
+		background-color: #4cadad;
+		color: white;
+		font-size: 1.25rem;
+		font-weight: 700;
+		display: grid;
+		place-content: center;
+		position: relative;
+		border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
 	}
 </style>

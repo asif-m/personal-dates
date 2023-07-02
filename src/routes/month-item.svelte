@@ -7,14 +7,16 @@
 	const children = monthlyEvents.children;
 </script>
 
-<section class="section">
+<div class="section">
 	{#each children as dailyEvents}
 		<DayItem {dailyEvents} {month} />
 	{/each}
-</section>
+</div>
 
 <style>
 	.section {
 		/* margin-left: 8px; */
+        margin:0;
+        padding:0;
 	}
 </style>

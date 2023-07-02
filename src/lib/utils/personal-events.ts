@@ -18,67 +18,62 @@ export const PERSONAL_EVENTS = [
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Jan'],
+		names: ['Random 1'],
 		date: new Date(1983, MONTH.JAN, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Feb'],
+		names: ['Random 2'],
 		date: new Date(1983, MONTH.FEB, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Mar'],
+		names: ['Random 3'],
 		date: new Date(1983, MONTH.MAR, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Apr'],
+		names: ['Random 4'],
 		date: new Date(1983, MONTH.APR, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random May'],
+		names: ['Random 5'],
 		date: new Date(1983, MONTH.MAY, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Jun'],
+		names: ['Random 6'],
 		date: new Date(1983, MONTH.JUN, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random July'],
+		names: ['Random 7'],
 		date: new Date(1983, MONTH.JUL, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Aug'],
+		names: ['Random 8'],
 		date: new Date(1983, MONTH.AUG, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Jan'],
-		date: new Date(1983, MONTH.JAN, 25, 12, 25),
-		type: EVENTTYPE.BIRTHDAY
-	},
-	{
-		names: ['Random Sept'],
+		names: ['Random 9'],
 		date: new Date(1983, MONTH.SEP, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Oct'],
+		names: ['Random 10'],
 		date: new Date(1983, MONTH.OCT, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Nov'],
+		names: ['Random 11'],
 		date: new Date(1983, MONTH.NOV, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},
 	{
-		names: ['Random Dec'],
+		names: ['Random 12'],
 		date: new Date(1983, MONTH.DEC, 25, 12, 25),
 		type: EVENTTYPE.BIRTHDAY
 	},

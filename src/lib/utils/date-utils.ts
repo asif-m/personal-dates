@@ -37,7 +37,6 @@ export class DateUtils {
 		};
 	}
 	public static getMonthString(month: number): string {
-		console.log({month, m:MONTH.JAN})
 		switch (month) {
 			case MONTH.JAN:
 				return 'JAN';
