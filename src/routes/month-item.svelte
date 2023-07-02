@@ -16,7 +16,7 @@
 <style>
 	.section {
 		/* margin-left: 8px; */
-        margin:0;
-        padding:0;
+		margin: 0;
+		padding: 0;
 	}
 </style>
