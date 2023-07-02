@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getFormattedReminderText } from '$lib/utils/reminders';
 	import type { TEventDetail } from '$lib/utils/store';
-	import Pill from './pill.svelte';
+	import Pill from '../shared/pill.svelte';
 	export let eventDetail: TEventDetail;
 	const reminderText = getFormattedReminderText(eventDetail.reminder);
 	const person = eventDetail.event.names[0];

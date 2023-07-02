@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Pill from './pill.svelte';
+	import Pill from '../shared/pill.svelte';
 </script>
 
 <div>

@@ -1,9 +1,9 @@
 <script>
 	import './styles.css';
 	import { NOW, YEAR_MONTH_DAY_EVENTS } from '../lib/utils/store';
-	import YearItem from './year-item.svelte';
+	import YearItem from '../lib/components/date-renderer/year-item.svelte';
 	import { PERSONAL_EVENTS } from '$lib/utils/personal-events';
-	import PersonalItem from './personal-item.svelte';
+	import PersonalItem from '../lib/components/personal-item.svelte';
 	import { afterUpdate } from 'svelte';
 
 	afterUpdate(() => {
@@ -48,13 +48,13 @@
 		flex-direction: row;
 	}
 	.left {
-		max-width: 1200px;
-		width: 30%;
+		max-width: 800px;
+		width: 35%;
 		overflow-y: scroll;
 		height: 99vh;
 	}
 	.right {
-		width: 70%;
+		width: 65%;
 		overflow-y: scroll;
 		height: 99vh;
 	}

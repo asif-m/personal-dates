@@ -2,10 +2,10 @@
 	import { EVENTTYPE } from '$lib/utils/constants';
 	import { DateUtils } from '$lib/utils/date-utils';
 	import { NOW, type TDailyEvents } from '$lib/utils/store';
-	import Birthday from './birthday.svelte';
-	import Wedding from './wedding.svelte';
-	import Pill from './pill.svelte';
-	import Today from './today.svelte';
+	import Birthday from '../event-type-wrappers/birthday.svelte';
+	import Wedding from '../event-type-wrappers/wedding.svelte';
+	import Pill from '../shared/pill.svelte';
+	import Today from '../event-type-wrappers/today.svelte';
 	export let dailyEvents: TDailyEvents;
 	export let month: number;
 	export let year: number;
@@ -50,10 +50,8 @@
 		flex-direction: row;
 	}
 
-	/* Title of the card */
 	.date {
 		color: #4cadad;
-		/* position: relative; */
 		min-width: 100px;
 		padding: 0px 0px 12px 16px;
 		font-size: 1rem;
@@ -81,9 +79,6 @@
 		padding: 0px 0px 12px 40px;
 	}
 	.today {
-		/* font-size: 1.25rem;
-		font-weight: 800;
-		font-weight: bold; */
 		color: black;
 	}
 </style>

@@ -1,4 +1,5 @@
-import { EVENTTYPE, MONTH } from './constants';
+import { EVENTTYPE } from './constants';
+import { MONTH } from './date-utils';
 
 export type TPersonalEvent = {
 	names: Array<string>;
