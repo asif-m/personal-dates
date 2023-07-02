@@ -1,6 +1,10 @@
 <script lang="ts">
+	import { EVENTTYPE } from '$lib/utils/constants';
 	import { DateUtils } from '$lib/utils/date-utils';
 	import type { TDailyEvents } from '$lib/utils/store';
+    import {getFormattedReminderText} from '$lib/utils/reminders';
+	import Birthday from './birthday.svelte';
+	import Wedding from './wedding.svelte';
 	export let dailyEvents: TDailyEvents;
 	export let month: number;
     export let year : number;
@@ -19,8 +23,11 @@
 				<div>
 					<div>
 						<div>
-							{eventDetail.event.names.join(',')}
-							{eventDetail.event.type.toString()}
+                            {#if eventDetail.event.type === EVENTTYPE.BIRTHDAY}
+                            <Birthday eventDetail={eventDetail}></Birthday>
+                            {:else}
+                            <Wedding eventDetail={eventDetail}></Wedding>
+                            {/if}
 						</div>
 					</div>
 				</div>

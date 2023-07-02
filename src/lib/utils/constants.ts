@@ -14,6 +14,6 @@ export const enum MONTH {
 }
 
 export const enum EVENTTYPE {
-	ANNIVERSARY = 'Anniversary',
+	WEDDING = 'Wedding',
 	BIRTHDAY = 'Birthday'
 }
