@@ -5,6 +5,7 @@
 	import Birthday from './birthday.svelte';
 	import Wedding from './wedding.svelte';
 	import Pill from './pill.svelte';
+	import Today from './today.svelte';
 	export let dailyEvents: TDailyEvents;
 	export let month: number;
 	export let year: number;
@@ -33,9 +34,7 @@
 							{:else if eventDetail.event.type === EVENTTYPE.WEDDING}
 								<Wedding {eventDetail} />
 							{:else if eventDetail.event.type === EVENTTYPE.TODAY}
-								<div>
-									<Pill text="📅 Today" color="red" backgroundColor="black" />
-								</div>
+								<Today />
 							{/if}
 						</div>
 					</div>
