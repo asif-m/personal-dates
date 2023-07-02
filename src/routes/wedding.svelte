@@ -8,16 +8,16 @@
 </script>
 
 <div>
-    {#if reminderText}
-    <div>
-        <Pill text={persons} color={"black"} backgroundColor={"white"}></Pill>
-        <Pill text={reminderText} color={"black"} backgroundColor={"white"}></Pill>
-    </div>
+	{#if reminderText}
+		<div>
+			<Pill text={persons} color={'black'} backgroundColor={'white'} />
+			<Pill text={reminderText} color={'black'} backgroundColor={'white'} />
+		</div>
 	{:else}
-    <div>
-        <Pill text={persons} color={"black"} backgroundColor={"white"}></Pill>
-    </div>
-    {/if}
+		<div>
+			<Pill text={persons} color={'black'} backgroundColor={'white'} />
+		</div>
+	{/if}
 </div>
 
 <style>

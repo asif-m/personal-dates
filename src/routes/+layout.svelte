@@ -12,9 +12,9 @@
 		);
 		nodes.forEach((node) =>
 			node.scrollIntoView({
-				block: "center",
-				inline:"center",
-				behavior: "instant"
+				block: 'center',
+				inline: 'center',
+				behavior: 'instant'
 			})
 		);
 	});

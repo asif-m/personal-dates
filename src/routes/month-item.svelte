@@ -3,14 +3,14 @@
 	import DayItem from './day-item.svelte';
 
 	export let monthlyEvents: TMonthlyEvents;
-	export let year : number;
+	export let year: number;
 	const month = monthlyEvents.month;
 	const children = monthlyEvents.children;
 </script>
 
 <div class="section">
 	{#each children as dailyEvents}
-		<DayItem {dailyEvents} {month} {year}/>
+		<DayItem {dailyEvents} {month} {year} />
 	{/each}
 </div>
 

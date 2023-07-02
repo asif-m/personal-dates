@@ -77,7 +77,7 @@ export class DateUtils {
 		const msInYear = 31556952000; // 1000 * 60 * 60 * 24 * 146097.0 / 400;
 		const mSeconds = n < 0 ? Math.floor(n) : Math.ceil(n);
 
-		const d ={
+		const d = {
 			seconds: Math.floor(mSeconds / msInSeconds),
 			minutes: Math.floor(mSeconds / msInMinute),
 			hours: Math.floor(mSeconds / msInHour),
@@ -85,7 +85,7 @@ export class DateUtils {
 			weeks: Math.floor(mSeconds / msInWeek),
 			months: Math.floor(mSeconds / msInMonth),
 			years: Math.floor(mSeconds / msInYear)
-		}
+		};
 		return d;
 	}
 }
