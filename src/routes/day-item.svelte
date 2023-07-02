@@ -3,11 +3,12 @@
 	import type { TDailyEvents } from '$lib/utils/store';
 	export let dailyEvents: TDailyEvents;
 	export let month: number;
+    export let year : number;
 	const day = dailyEvents.day;
 	const children = dailyEvents.children;
 </script>
 
-<div class="timeline">
+<div class="timeline" data-scroll={`${year}_${month}_${day}`}>
 	<div class="divider" />
 	<div class="contents">
 		<div class="date">

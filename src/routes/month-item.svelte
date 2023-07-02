@@ -3,13 +3,14 @@
 	import DayItem from './day-item.svelte';
 
 	export let monthlyEvents: TMonthlyEvents;
+	export let year : number;
 	const month = monthlyEvents.month;
 	const children = monthlyEvents.children;
 </script>
 
-<div class="section">
+<div class="section" data-scroll={`${year}_${month}`}>
 	{#each children as dailyEvents}
-		<DayItem {dailyEvents} {month} />
+		<DayItem {dailyEvents} {month} {year}/>
 	{/each}
 </div>
 
