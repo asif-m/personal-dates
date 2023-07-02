@@ -9,71 +9,79 @@
 
 <div class="section">
 	<div class="timeline">
-		<div class="timeline">
-			<div class="outer">
-				{#each children as eventDetail}
-					<div class="card">
-						<div class="info">
-							<h3 class="title">{day} {DateUtils.getMonthString(month)}</h3>
-							<div class="eventData">
+		
+        <div class="divider"></div>
+		<div class="contents">
+            <div class="date">
+                <div>{day} {DateUtils.getMonthString(month)}</div>
+            </div>
+			{#each children as eventDetail}
+				<div class="item">
+					<div>
+						<div>
+							<div>
 								{eventDetail.event.names.join(',')}
 								{eventDetail.event.type.toString()}
 							</div>
 						</div>
 					</div>
-				{/each}
-			</div>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
 
 <style>
 	.section {
-		margin:0;
-        padding:0;
+		
 	}
 	.timeline {
-		
-	}
-
-	/* Outer Layer with the timeline border */
-	.outer {
-		border-left: 2px solid #333;
-	}
-
-	/* Card container */
-	.card {
-		position: relative;
-		margin: 0 0 0px 20px;
-		padding-left: 10px;
-		
-		color: gray;
-		border-radius: 8px;
-		max-width: 400px;
-	}
-
-	/* Information about the timeline */
-	.info {
 		display: flex;
-		flex-direction: column;
-		/* gap: 10px; */
+		flex-direction: row;
 	}
 
 	/* Title of the card */
-	.title {
-		color: #4CADAD;
-		position: relative;
+	.date {
+		color: #4cadad;
+		/* position: relative; */
+		min-width: 100px;
+        padding:0px 0px 12px 16px
+		
 	}
+    .date::before {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background: white;
+		border-radius: 1000px;
+		left: 10px;
+		border: 3px solid #4cadad;
+	}
+    .divider{
+        width:2px;
+        background-color: black;
+        margin-left: 10px;
 
-	/* Timeline dot  */
-	.title::before {
+    }
+    /* .contents {
+		padding-left: 10px;
+        border-left: 2px solid #333;
+	} */
+	/* Timeline dot 
+	.date::before {
 		content: '';
 		position: absolute;
 		width: 10px;
 		height: 10px;
 		background: white;
 		border-radius: 999px;
-		left: -39px;
-		border: 3px solid #4CADAD;
+		left: -9px;
+		top: 21px;
+		border: 3px solid #4cadad;
 	}
+	*/
+    .item{
+      padding:0px 0px 12px 40px
+    } 
 </style>
