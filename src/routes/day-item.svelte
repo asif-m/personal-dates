@@ -5,6 +5,7 @@
 	import { getFormattedReminderText } from '$lib/utils/reminders';
 	import Birthday from './birthday.svelte';
 	import Wedding from './wedding.svelte';
+	import Pill from './pill.svelte';
 	export let dailyEvents: TDailyEvents;
 	export let month: number;
 	export let year: number;
@@ -25,8 +26,10 @@
 						<div>
 							{#if eventDetail.event.type === EVENTTYPE.BIRTHDAY}
 								<Birthday {eventDetail} />
-							{:else}
+							{:else if eventDetail.event.type === EVENTTYPE.WEDDING}
 								<Wedding {eventDetail} />
+							{:else if eventDetail.event.type === EVENTTYPE.TODAY}
+								<Pill text="Today" color="red" backgroundColor="black"></Pill>
 							{/if}
 						</div>
 					</div>

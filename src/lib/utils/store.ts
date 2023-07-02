@@ -1,3 +1,4 @@
+import { EVENTTYPE } from './constants';
 import { DateUtils } from './date-utils';
 import { PERSONAL_EVENTS, type TPersonalEvent } from './personal-events';
 import { REMINDERS, type TReminder } from './reminders';
@@ -23,41 +24,35 @@ export type TYearlyEvents = {
 	children: Array<TMonthlyEvents>;
 };
 
-const data: { [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } } = {};
+type TData={ [key in number]: { [key in number]: { [key in number]: Array<TEventDetail> } } }
+const data:TData  = {};
 console.time();
 const now = new Date(Date.now());
 const nowTick = now.getTime();
-let closest = {
-	initialized: false,
-	minTickDiff: 0,
-	year: 0,
-	month: 0,
-	day: 0
-};
+function initForDate(data:TData, year:number, month:number, day:number){
+	if (!data[year]) {
+		data[year] = {};
+	}
+	if (!data[year][month]) {
+		data[year][month] = {};
+	}
+	if (!data[year][month][day]) {
+		data[year][month][day] = [];
+	}
+}
+initForDate(data, now.getFullYear(),now.getMonth(),now.getDate());
+data[now.getFullYear()][now.getMonth()][now.getDate()].push({
+	tick:nowTick,
+	date : now,
+	event: {names:[], date:now, type:EVENTTYPE.TODAY},
+	reminder: {years:0, months:0, days:0, weeks:0, hours:0, minutes:0, seconds:0}
+});
+
 
 PERSONAL_EVENTS.forEach((event) => {
 	REMINDERS.forEach((reminder) => {
 		const { date, year, month, day, tick } = DateUtils.calculateReminder(event, reminder);
-		if (!data[year]) {
-			data[year] = {};
-		}
-		if (!data[year][month]) {
-			data[year][month] = {};
-		}
-		if (!data[year][month][day]) {
-			data[year][month][day] = [];
-		}
-		const nowTickDiff = Math.abs(nowTick - tick);
-		if (!closest.initialized || nowTickDiff < closest.minTickDiff) {
-			closest = {
-				minTickDiff: nowTickDiff,
-				year,
-				month,
-				day,
-				initialized: true
-			};
-		}
-
+		initForDate(data, year,month,day);
 		data[year][month][day].push({
 			tick,
 			date,
@@ -66,6 +61,8 @@ PERSONAL_EVENTS.forEach((event) => {
 		});
 	});
 });
+
+
 const yearWiseArray: Array<TYearlyEvents> = [];
 
 for (const year in data) {
@@ -88,4 +85,3 @@ yearWiseArray.sort((a, b) => a.year - b.year);
 console.timeEnd();
 
 export const YEAR_MONTH_DAY_EVENTS = yearWiseArray;
-export const CLOSEST_DATE_TO_TODAY = closest;

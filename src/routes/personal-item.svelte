@@ -63,7 +63,7 @@
 
 <style>
 	.container {
-		min-width: 200px;
+		min-width: 230px;
 		border: 4px solid #4cadad;
 		border-radius: 6px;
 		margin: 4px;
