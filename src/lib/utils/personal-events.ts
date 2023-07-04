@@ -114,6 +114,11 @@ export const PERSONAL_EVENTS = [
 	// 	type: EVENTTYPE.BIRTHDAY
 	// },
 	{
+		names: ['Nafeesa', 'Ahmed'],
+		date: new Date(1976, MONTH.MAY, 12),
+		type: EVENTTYPE.WEDDING
+	},
+	{
 		names: ['Shabana', 'Rafiq'],
 		date: new Date(1997, MONTH.DEC, 22),
 		type: EVENTTYPE.WEDDING
